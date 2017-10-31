@@ -25,4 +25,4 @@
 /public/packs-test
 /node_modules
 
-/javascript/actions/secret.js
+app/javascript/actions/secret.js
