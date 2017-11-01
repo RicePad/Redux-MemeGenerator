@@ -1,4 +1,4 @@
-import { username, password } from './secrets.js'
+import { username, password } from '../actions/secret.js'
 export const RECIEVE_MEMES = "RECIEVE_MEMES";
 
 function recieveMemes(json){
