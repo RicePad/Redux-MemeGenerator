@@ -45,8 +45,8 @@ function newMeme(meme){
 }
 
 function postMemeJson(params) {
-  params["username"] = ENV['username']
-  params["password"] = ENV['password']
+  params ENV["username"] = username;
+  params ENV["password"] = password;
 
   const bodyParams = Object.keys(params).map(key => {
     return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
