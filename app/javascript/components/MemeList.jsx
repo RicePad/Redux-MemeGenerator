@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MemeItem from './MemeItem';
+import {Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 
 class MemeList extends Component {
 	constructor(props){
