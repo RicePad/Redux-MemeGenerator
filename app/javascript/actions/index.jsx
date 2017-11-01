@@ -1,5 +1,6 @@
-import { username, password } from '../actions/secret.js'
+import { username, password } from '../actions/secret.js';
 export const RECIEVE_MEMES = "RECIEVE_MEMES";
+export const NEW_MEME = "NEW_MEME";
 
 function recieveMemes(json){
 	const { memes } = json.data;
@@ -26,4 +27,42 @@ export function fetchMemes(){
 	}
 }
 
+// *********** POST REQUEST API ***********
+
+function newMeme(meme){
+	const action = {
+		type: NEW_MEME,
+		meme
+
+	}
+
+	return action
+
+}
+
+function postMemeJson(params) {
+  params["username"] = username;
+  params["password"] = password;
+
+  const bodyParams = Object.keys(params).map(key => {
+    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
+  }).join('&');
+
+  console.log('bodyParams', bodyParams);
+
+  return fetch('https://api.imgflip.com/caption_image', {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: bodyParams
+  }).then(response => response.json());
+}
+
+export function createMeme(new_meme_object) {
+  return function(dispatch) {
+    return postMemeJson(new_meme_object)
+      .then(new_meme => dispatch(newMeme(new_meme)))
+  }
+}
 

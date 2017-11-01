@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MemeItem from './MemeItem';
+import MyMemes from './MyMemes';
 import {Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
 class MemeList extends Component {
@@ -25,6 +26,8 @@ class MemeList extends Component {
 		return(
 				<div className="container">
 					<h2>RicePad's Meme Generator</h2>
+					<MyMemes />
+
 					<div className="meme-editor">
 						<Form inline>
 							<FormGroup>
@@ -32,7 +35,7 @@ class MemeList extends Component {
 								{' '}
 								<FormControl
 									type='text'
-									onChange={() => this.setState({text0: event.target.value})}
+									onChange={(event) => this.setState({text0: event.target.value})}
 								>
 								</FormControl>
 							</FormGroup>
@@ -41,7 +44,7 @@ class MemeList extends Component {
 								<div className="ctrl-label"><ControlLabel>Bottom</ControlLabel></div>
 								<FormControl
 									type='text'
-									onChange={() => this.setState({text1: event.target.value})}
+									onChange={(event) => this.setState({text1: event.target.value})}
 
 								 >
 							    </FormControl>
@@ -59,7 +62,12 @@ class MemeList extends Component {
 					<div>
 						{this.props.fetchMemes.slice(0, this.state.memeLimit).map((meme, index) => {
 							return(
-								<MemeItem key={index} meme={meme}/>
+								<MemeItem 
+									key={index} 
+									meme={meme}
+									text0={this.state.text0}
+									text1={this.state.text1}
+								/>
 								)})}
 					
 					</div>
