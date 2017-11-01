@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	text-align: center;
+	padding: 5%;
+	background-color: #fd5c63;
+	color: white;
+	font-family: Arial;
+
+}
+
+.meme-button{
+	cursor: pointer;
+	font-style: italic;
+	padding: 10px;
+}
+
+
