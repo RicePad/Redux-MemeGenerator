@@ -57,5 +57,12 @@ gem 'webpacker', '~> 3.0'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 
+group  :production do
+    gem 'pg', '~> 0.18'
+    gem 'rails_12factor'
+
+  end
+
+
 
 
