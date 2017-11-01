@@ -19,18 +19,25 @@ class MemeList extends Component {
 
 		console.log('this.props', this.props)
 		return(
-				<div>
+				<div className="container">
 					<h2>RicePad's Meme Generator</h2>
-					<div>
+					<div className="meme-editor">
 						<Form inline>
-							<ControlLabel>Top</ControlLabel>
-							{' '}
 							<FormGroup>
-								<FormControl></FormControl>
+								<div className="ctrl-label"><ControlLabel>Top</ControlLabel></div>
+								{' '}
+								<FormControl
+									type='text'
+								>
+								</FormControl>
 							</FormGroup>
-							<ControlLabel>Bottom</ControlLabel>
+							
 							<FormGroup>
-								<FormControl></FormControl>
+								<div className="ctrl-label"><ControlLabel>Bottom</ControlLabel></div>
+								<FormControl
+									type='text'
+								 >
+							    </FormControl>
 							</FormGroup>
 						</Form>
 					</div>
