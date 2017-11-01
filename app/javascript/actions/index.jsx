@@ -2,8 +2,8 @@
 export const RECIEVE_MEMES = "RECIEVE_MEMES";
 export const NEW_MEME = "NEW_MEME";
 
-ENV['username']
-ENV['password']
+
+
 
 
 function recieveMemes(json){
@@ -45,8 +45,8 @@ function newMeme(meme){
 }
 
 function postMemeJson(params) {
-  params["username"] = username;
-  params["password"] = password;
+  params => ENV['username']= username;
+  params => ENV['password'] = password;
 
   const bodyParams = Object.keys(params).map(key => {
     return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
