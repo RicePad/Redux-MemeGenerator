@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import MemeItem from './MemeItem';
 
 class MemeList extends Component {
 	constructor(props){
@@ -18,22 +19,18 @@ class MemeList extends Component {
 		console.log('this.props', this.props)
 		return(
 				<div>
-					<h2>List of Memes</h2>
+					<h2>RicePad's Meme Generator</h2>
+					<h3 
+							className="meme-button" 
+							onClick={() => this.setState({memeLimit: this.state.memeLimit+10})}>
+							<b>Load more memes......</b>
+					</h3>
 					<div>
 						{this.props.fetchMemes.slice(0, this.state.memeLimit).map((meme, index) => {
 							return(
-								<h3 key={index}>{meme.name}</h3>
-								)
-
-
-						})}
-					<div>
-						<div 
-							className="meme-button" 
-							onClick={() => this.setState({memeLimit: this.state.memeLimit+10})}>
-							Load more memes...
-						</div>
-					</div>
+								<MemeItem key={index} meme={meme}/>
+								)})}
+					
 					</div>
 				</div>
 			)
