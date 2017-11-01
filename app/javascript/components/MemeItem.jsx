@@ -6,7 +6,7 @@ class MemeItem extends Component {
 		let { meme } = this.props
 		return(
 			<div className="meme-item">
-				<h3>{meme.name}</h3>
+				<div>{meme.name}</div>
 				<img
 					className="meme-image"
 					src={meme.url}

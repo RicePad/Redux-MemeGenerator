@@ -8,11 +8,15 @@ class MemeList extends Component {
 		super(props);
 
 		this.state = {
-			memeLimit: 10
+			memeLimit: 10,
+			text0: '',
+			text1: ''
 		}
 	}
 
-
+	addMoreMemes(){
+		this.setState({memeLimit: this.state.memeLimit+10})
+	}
 
 
 	render(){
@@ -28,6 +32,7 @@ class MemeList extends Component {
 								{' '}
 								<FormControl
 									type='text'
+									onChange={() => this.setState({text0: event.target.value})}
 								>
 								</FormControl>
 							</FormGroup>
@@ -36,6 +41,8 @@ class MemeList extends Component {
 								<div className="ctrl-label"><ControlLabel>Bottom</ControlLabel></div>
 								<FormControl
 									type='text'
+									onChange={() => this.setState({text1: event.target.value})}
+
 								 >
 							    </FormControl>
 							</FormGroup>
@@ -44,7 +51,9 @@ class MemeList extends Component {
 					
 					<h3 
 							className="meme-button" 
-							onClick={() => this.setState({memeLimit: this.state.memeLimit+10})}>
+							// onClick={() => this.setState({memeLimit: this.state.memeLimit+10})}
+							onClick={()=> this.addMoreMemes()}
+					 >
 							<b>Load more memes......</b>
 					</h3>
 					<div>
