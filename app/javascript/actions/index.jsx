@@ -2,8 +2,8 @@
 export const RECIEVE_MEMES = "RECIEVE_MEMES";
 export const NEW_MEME = "NEW_MEME";
 
-const username=ENV['username']
-const password=ENV['password']
+const username ='jonnthinkrtc';
+const password="fuckyou123";
 
 
 function recieveMemes(json){
