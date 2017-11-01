@@ -1,6 +1,10 @@
-import { username, password } from '../actions/secret.js';
+// import { username, password } from '../actions/secret.js';
 export const RECIEVE_MEMES = "RECIEVE_MEMES";
 export const NEW_MEME = "NEW_MEME";
+
+ENV['username']
+ENV['password']
+
 
 function recieveMemes(json){
 	const { memes } = json.data;
