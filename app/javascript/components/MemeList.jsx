@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MemeItem from './MemeItem';
-import {Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
+import {Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
 class MemeList extends Component {
 	constructor(props){
@@ -21,6 +21,20 @@ class MemeList extends Component {
 		return(
 				<div>
 					<h2>RicePad's Meme Generator</h2>
+					<div>
+						<Form inline>
+							<ControlLabel>Top</ControlLabel>
+							{' '}
+							<FormGroup>
+								<FormControl></FormControl>
+							</FormGroup>
+							<ControlLabel>Bottom</ControlLabel>
+							<FormGroup>
+								<FormControl></FormControl>
+							</FormGroup>
+						</Form>
+					</div>
+					
 					<h3 
 							className="meme-button" 
 							onClick={() => this.setState({memeLimit: this.state.memeLimit+10})}>
